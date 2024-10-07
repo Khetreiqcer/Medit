@@ -14,7 +14,7 @@ export default function Home() {
     <div>
       {/* Seção Hero Melhorada */}
       <Hero />
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-16" id="Porque">
         <h2 className="text-3xl font-semibold text-center mb-12">
           Por que Meditar?
         </h2>

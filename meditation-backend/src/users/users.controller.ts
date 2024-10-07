@@ -1,4 +1,3 @@
-import { Controller } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
 
-@Controller('users')
-export class UsersController {}
+describe('UsersController', () => {});

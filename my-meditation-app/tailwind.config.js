@@ -10,14 +10,15 @@ module.exports = {
       colors: {
         darkBackground: '#1F1F1F', // Cinza-escuro suave
         lightBackground: '#FFFFFF',
-        primary: '#5A67D8', // Azul escuro acinzentado para botões
-        secondary: '#34C759', // Verde suave para destaques
-        accent: '#A3A3A3', // Cinza claro para bordas e destaques
+        primary: '#5A67D8', // Ajuste para a cor principal do site
+        secondary: '#34C759', // Ajuste para a cor secundária
+        accent: '#A3A3A3', // Ajuste para a cor de destaque// Cinza claro para bordas e destaques
         darkText: '#E0E0E0', // Texto suave no modo escuro
         gray: {
-          900: '#1F1F1F', // Tom mais suave de preto para fundo
-          800: '#2A2A35', // Azul acinzentado para destaques e bordas
-          700: '#3D3D45', // Cinza escuro suave para separadores
+          900: '#1F1F1F',
+          800: '#2A2A35',
+          700: '#3D3D45',
+          200: '#E5E7EB',
         },
       },
       fontFamily: {

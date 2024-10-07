@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <p className="text-sm mb-4 md:mb-0">
-          © 2023 Meditação Moderna. Todos os direitos reservados.
+          © 2024 Meditação Moderna. Todos os direitos reservados.
         </p>
         <div className="flex space-x-4">
           <a href="#" className="hover:text-gray-400">

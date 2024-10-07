@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { BlogModule } from './blog/blog.module';
 import { SchedulingModule } from './scheduling/scheduling.module';
+import { MeditationsModule } from './meditations/meditations.module';
 // Importe aqui seus módulos e esquemas
 
 @Module({
@@ -23,6 +24,7 @@ import { SchedulingModule } from './scheduling/scheduling.module';
     AuthModule,
     BlogModule,
     SchedulingModule,
+    MeditationsModule,
     // Outros módulos
   ],
   controllers: [],

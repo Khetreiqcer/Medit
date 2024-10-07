@@ -1,5 +1,3 @@
-// src/meditations/meditations.service.ts
-
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Meditation, MeditationDocument } from '../models/meditation.shema';
@@ -17,14 +15,8 @@ export class MeditationsService {
     return this.meditationModel.find().exec();
   }
 
-  async create(
-    createMeditationDto: CreateMeditationDto,
-    user,
-  ): Promise<Meditation> {
-    const newMeditation = new this.meditationModel({
-      ...createMeditationDto,
-      criadoPor: user._id,
-    });
+  async create(createMeditationDto: CreateMeditationDto): Promise<Meditation> {
+    const newMeditation = new this.meditationModel(createMeditationDto);
     return newMeditation.save();
   }
 }
