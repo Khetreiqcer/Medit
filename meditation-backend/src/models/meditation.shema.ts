@@ -13,7 +13,7 @@ export class Meditation {
   @Prop()
   descricao?: string;
 
-  @Prop({ required: true })
+  @Prop({})
   arquivoAudio: string;
 
   @Prop()

@@ -25,7 +25,11 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button onClick={toggleTheme} className="p-2 rounded">
+    <button
+      onClick={toggleTheme}
+      className="p-2 rounded"
+      aria-label="Alternar Tema"
+    >
       {theme === 'light' ? '🌙' : '☀️ '}
     </button>
   );

@@ -13,7 +13,6 @@ export class MeditationsController {
     return this.meditationsService.findAll();
   }
 
-  @UseGuards(JwtAuthGuard)
   @Post()
   async create(@Body() createMeditationDto: CreateMeditationDto) {
     return this.meditationsService.create(createMeditationDto);

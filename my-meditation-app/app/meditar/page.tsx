@@ -16,7 +16,7 @@ export default function MeditationsPage() {
   useEffect(() => {
     const fetchMeditations = async () => {
       try {
-        const response = await fetch('http://seu-backend-url/api/meditations');
+        const response = await fetch('http://localhost:3800/meditations');
         if (!response.ok) {
           throw new Error('Erro ao buscar meditações');
         }

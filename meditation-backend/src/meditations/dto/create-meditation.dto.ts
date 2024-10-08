@@ -10,6 +10,7 @@ export class CreateMeditationDto {
   @IsString()
   descricao?: string;
 
+  @IsOptional()
   @IsString()
   arquivoAudio: string;
 

@@ -11,6 +11,7 @@ export default function Modal() {
       <button
         onClick={() => setIsOpen(true)}
         className="bg-primary text-white px-6 py-2 font-semibold hover:bg-blue-600"
+        aria-label="Saiba Mais"
       >
         Saiba Mais
       </button>
