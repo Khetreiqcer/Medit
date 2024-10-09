@@ -2,10 +2,11 @@
 import { useEffect, useState } from 'react';
 
 interface Meditation {
-  id: string;
-  title: string;
-  description: string;
-  duration: number;
+  titulo: string;
+  descricao: string;
+  categoria: string;
+  duracao: number;
+  arquivoAudio: string;
 }
 
 export default function MeditationsPage() {
@@ -56,21 +57,26 @@ export default function MeditationsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {meditations.map((meditation) => (
           <div
-            key={meditation.id}
+            key={meditation.titulo} // Use a unique key like 'titulo'
             className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-              {meditation.title}
+              {meditation.titulo}
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              {meditation.description}
+              {meditation.descricao}
             </p>
             <p className="text-gray-500 dark:text-gray-400">
-              Duração: {meditation.duration} minutos
+              Categoria: {meditation.categoria}
             </p>
-            <button className="mt-4 bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-200 w-full">
-              Iniciar Meditação
-            </button>
+            <p className="text-gray-500 dark:text-gray-400">
+              Duração: {meditation.duracao} minutos
+            </p>
+            {/* Placeholder for audio player */}
+            <audio controls className="w-full mt-4">
+              <source src={meditation.arquivoAudio} type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
           </div>
         ))}
       </div>

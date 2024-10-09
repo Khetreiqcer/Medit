@@ -2,6 +2,7 @@
 
 import Slider from 'react-slick';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function TestimonialCarousel() {
   const settings = {
@@ -10,6 +11,25 @@ export default function TestimonialCarousel() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    appendDots: (dots) => (
+      <div>
+        <ul style={{ margin: '0px' }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i) => (
+      <div
+        style={{
+          width: '12px',
+          height: '12px',
+          borderRadius: '50%',
+          backgroundColor: '#ddd',
+          margin: '0 4px',
+          cursor: 'pointer',
+        }}
+      />
+    ),
   };
 
   const testimonials = [
@@ -29,22 +49,38 @@ export default function TestimonialCarousel() {
   ];
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="max-w-2xl mx-auto py-12"
+    >
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="text-center px-4">
+          <motion.div
+            key={index}
+            className="text-center px-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5 }}
+          >
             <Image
               src={testimonial.image}
               alt={testimonial.name}
-              width={80}
-              height={80}
-              className="mx-auto rounded-full mb-4"
+              width={100}
+              height={100}
+              className="mx-auto rounded-full mb-4 border-4 border-gray-300 dark:border-gray-600"
             />
-            <p className="text-gray-700 italic mb-4">"{testimonial.text}"</p>
-            <p className="text-gray-800 font-semibold">{testimonial.name}</p>
-          </div>
+            <p className="text-gray-600 dark:text-gray-400 italic mb-4">
+              "{testimonial.text}"
+            </p>
+            <p className="text-lg text-primary dark:text-secondary font-bold">
+              {testimonial.name}
+            </p>
+          </motion.div>
         ))}
       </Slider>
-    </div>
+    </motion.div>
   );
 }
