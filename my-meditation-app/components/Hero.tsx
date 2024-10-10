@@ -1,78 +1,84 @@
 'use client';
+
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
 
+const scrollToNextSection = () => {
+  const nextSection = document.getElementById('Porque');
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export default function Hero() {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const [phraseIndex, setPhraseIndex] = useState(0);
-
-  const phrases = [
-    'Respire fundo e encontre seu equilíbrio.',
-    'Mente tranquila, vida equilibrada.',
-  ];
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e;
-    const x = (clientX / window.innerWidth) * 2 - 1;
-    const y = (clientY / window.innerHeight) * 2 - 1;
-    setOffset({ x, y });
-
-    const newPhraseIndex = x > 0 ? 0 : 1;
-    if (newPhraseIndex !== phraseIndex) {
-      setPhraseIndex(newPhraseIndex);
-    }
-  };
-
-  const scrollToNextSection = () => {
-    const nextSection = document.getElementById('Porque');
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section
-      className="relative h-screen flex items-center justify-center bg-white dark:bg-gray-900 overflow-hidden"
-      onMouseMove={handleMouseMove}
-    >
-      <div
-        className="absolute inset-0 pointer-events-none transition-transform duration-700 ease-out"
-        style={{
-          transform: `translate(${offset.x * 10}px, ${offset.y * 10}px)`,
-        }}
+    <section className="relative h-[100vh] flex flex-col items-center justify-center pt-8 bg-white dark:bg-gray-900 overflow-hidden">
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="300"
+        height="300"
+        viewBox="0 0 200 200"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 3, ease: 'easeInOut' }}
       >
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-blue-200 dark:bg-blue-700 border-2 border-transparent opacity-40 transform transition-transform duration-1000 ease-out"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-red-200 dark:bg-red-600 border-2 border-transparent opacity-40 transform transition-transform duration-1000 ease-out"></div>
-        <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-green-200 dark:bg-green-800 border-2 border-transparent opacity-40 transform transition-transform duration-1000 ease-out"></div>
-      </div>
+        <motion.path
+          d="M 100, 10 A 90, 90 0 1, 1 99.9, 10"
+          fill="none"
+          stroke="#5E81AC"
+          strokeWidth="20"
+          strokeLinecap="round"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 3, ease: 'easeInOut' }}
+        />
+        <motion.circle
+          cx="130"
+          cy="60"
+          r="20"
+          fill="#5E81AC"
+          className="dark:fill-[#5E81AC]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 3.5, duration: 1 }}
+        />
+        <motion.circle
+          cx="70"
+          cy="140"
+          r="20"
+          fill="#FF0000"
+          className="dark:fill-[#FFFFFF]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 3.5, duration: 1 }}
+        />
+      </motion.svg>
 
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="relative z-10 text-center px-4 max-w-2xl mx-auto"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 3.2, duration: 1 }}
+        className="text-center"
       >
-        <div className="bg-white/70 dark:bg-gray-800/70 p-12 rounded-none shadow-md backdrop-blur-md">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight font-sans tracking-wide">
-            Encontre a Paz Interior
-          </h1>
-          <motion.p
-            key={phraseIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-10 tracking-wider leading-relaxed"
-          >
-            "{phrases[phraseIndex]}"
-          </motion.p>
-          <Link href="/meditations">
-            <button className="bg-gray-900 text-white px-8 py-4 font-medium uppercase rounded-none shadow hover:bg-gray-700 transition-all duration-300">
-              Comece Agora
-            </button>
-          </Link>
-        </div>
+        <h1 className="text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+          Encontre a Paz Interior
+        </h1>
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+          Descubra técnicas de meditação para uma vida mais equilibrada.
+        </p>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 4.5, duration: 1 }}
+        className="text-center"
+      >
+        <Link href="/meditar">
+          <button className="bg-primary text-white px-6 py-3 font-semibold rounded-full hover:bg-primary-dark transition-transform transform hover:scale-105">
+            Medite Agora
+          </button>
+        </Link>
       </motion.div>
 
       <motion.button

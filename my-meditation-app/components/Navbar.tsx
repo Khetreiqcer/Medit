@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import ThemeToggle from './ThemeToggle';
-import { FaLeaf, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,7 +18,6 @@ export default function Navbar() {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -38,9 +38,42 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <FaLeaf className="text-primary dark:text-secondary" size={24} />
-          <h1 className="text-2xl font-bold text-primary dark:text-gray-100">
-            Meditação
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            viewBox="0 0 200 200"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 3, ease: 'easeInOut' }}
+          >
+            <motion.path
+              d="M 100, 10 A 90, 90 0 1, 1 99.9, 10"
+              fill="none"
+              stroke="#5E81AC"
+              strokeWidth="10"
+              strokeLinecap="round"
+              initial={{ pathLength: 1 }}
+            />
+            <motion.circle
+              cx="130"
+              cy="60"
+              r="10"
+              fill="#5E81AC"
+              className="dark:fill-[#5E81AC]"
+              initial={{ opacity: 1 }}
+            />
+            <motion.circle
+              cx="70"
+              cy="140"
+              r="10"
+              fill="#FF0000"
+              className="dark:fill-[#FFFFFF]"
+              initial={{ opacity: 1 }}
+            />
+          </motion.svg>
+          <h1 className="text-2xl font-bold text-primary dark:text-secondary">
+            Medit
           </h1>
         </Link>
         <div className="md:hidden">
