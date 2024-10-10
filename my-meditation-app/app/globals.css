@@ -1,4 +1,3 @@
-/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,9 +12,9 @@
 }
 
 [data-theme='dark'] {
-  --bg-color: #1f1f1f; /* Cinza-escuro */
-  --text-color: #e0e0e0; /* Texto branco suave */
-  --border-color: #2a2a35; /* Azul acinzentado para bordas */
+  --bg-color: #1f1f1f;
+  --text-color: #e0e0e0;
+  --border-color: #2a2a35;
 }
 
 body {
@@ -51,7 +50,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html {

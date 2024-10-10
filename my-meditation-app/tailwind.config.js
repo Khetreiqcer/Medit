@@ -8,13 +8,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkBackground: '#121212', // Fundo escuro mais profundo
-        lightBackground: '#F8F8F8', // Fundo claro com um toque suave
-        primary: '#5E81AC', // Azul claro suave para destacar links e botões
-        secondary: '#88C0D0', // Azul esverdeado para acentuar elementos
-        accent: '#4C566A', // Cinza médio para bordas e pequenos detalhes
-        darkText: '#ECEFF4', // Texto quase branco para modo escuro
-        lightText: '#2E3440', // Texto escuro mais forte no modo claro
+        darkBackground: '#1B1B1E', // Cinza escuro profundo para o fundo escuro
+        lightBackground: '#FDF7F2', // Off-white suave para o fundo claro
+        primary: {
+          light: '#B2DFDB', // Verde-água suave para o modo claro
+          dark: '#889E9B', // Verde-acinzentado escuro para o modo escuro
+        },
+        secondary: {
+          light: '#708090', // Cinza azulado claro para o modo claro
+          dark: '#4A5568', // Cinza azulado escuro para o modo escuro
+        },
+        accent: {
+          light: '#C4B5FD', // Lavanda acinzentada claro para o modo claro
+          dark: '#7C6EEB', // Lavanda acinzentada escuro para o modo escuro
+        },
+        darkText: '#FDF7F2', // Off-white para texto no modo escuro
+        lightText: '#1B1B1E', // Cinza escuro para texto no modo claro
         gray: {
           900: '#1B1B1E',
           800: '#2E3440',
@@ -23,8 +32,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['"IBM Plex Sans"', 'sans-serif'], // Fonte similar ao site de Takuya Matsuyama
-        serif: ['"Playfair Display"', 'serif'],
+        sans: ['"Roboto"', 'sans-serif'],
+        serif: ['"Lora"', 'serif'],
       },
     },
   },

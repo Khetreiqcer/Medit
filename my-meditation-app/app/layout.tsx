@@ -1,8 +1,5 @@
-// app/layout.tsx
 import ClientWrapper from '../components/ClientWrapper';
-import './globals.css'; // Certifique-se de ter estilos globais configurados
-
-// app/layout.tsx
+import './globals.css';
 
 export const metadata = {
   title: 'Meditação Moderna',

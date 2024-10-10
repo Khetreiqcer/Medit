@@ -13,7 +13,7 @@ const scrollToNextSection = () => {
 
 export default function Hero() {
   return (
-    <section className="relative h-[100vh] flex flex-col items-center justify-center pt-8 bg-white dark:bg-gray-900 overflow-hidden">
+    <section className="relative h-[100vh] flex flex-col items-center justify-center pt-8 light:bg-lightBackground dark:bg-darkBackground overflow-hidden">
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         width="300"
@@ -75,7 +75,7 @@ export default function Hero() {
         className="text-center"
       >
         <Link href="/meditar">
-          <button className="bg-primary text-white px-6 py-3 font-semibold rounded-full hover:bg-primary-dark transition-transform transform hover:scale-105">
+          <button className="bg-primary px-6 py-3 font-semibold rounded-full hover:bg-primary-dark transition-transform transform hover:scale-105">
             Medite Agora
           </button>
         </Link>

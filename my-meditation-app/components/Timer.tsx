@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 export default function Timer() {
-  const [timeLeft, setTimeLeft] = useState(300); // 5 minutos em segundos
+  const [timeLeft, setTimeLeft] = useState(300);
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -11,13 +11,12 @@ export default function Timer() {
     if (isActive && timeLeft > 0) {
       timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
     } else if (timeLeft === 0) {
-      // Anunciar o término do timer para leitores de tela
       const message = 'Tempo esgotado!';
       if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(message);
         window.speechSynthesis.speak(utterance);
       } else {
-        console.log(message); // Caso a síntese de voz não seja suportada
+        console.log(message);
       }
     }
     return () => clearTimeout(timer);
@@ -29,7 +28,7 @@ export default function Timer() {
   const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.code === 'Space' || event.code === 'Enter') {
       setIsActive(!isActive);
-      event.preventDefault(); // Previne o comportamento padrão da tecla
+      event.preventDefault();
     }
   };
 

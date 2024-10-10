@@ -113,6 +113,12 @@ export default function Navbar() {
           >
             Contato
           </Link>
+          <Link
+            href="/login"
+            className="text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            Login
+          </Link>
           <ThemeToggle />
         </div>
       </div>

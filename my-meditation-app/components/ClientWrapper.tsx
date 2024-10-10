@@ -1,4 +1,3 @@
-// components/ClientWrapper.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -9,7 +8,6 @@ export default function ClientWrapper() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
-    // Verificar se o tema foi salvo no localStorage
     const storedTheme = localStorage.getItem('theme') as
       | 'light'
       | 'dark'

@@ -1,9 +1,8 @@
-// components/Footer.tsx
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-8">
+    <footer className="dark:bg-gray-800 bg-gray-200 text-white py-8">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <p className="text-sm mb-4 md:mb-0">
           © 2024 Meditação Moderna. Todos os direitos reservados.

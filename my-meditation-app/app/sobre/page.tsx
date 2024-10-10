@@ -5,11 +5,11 @@ export const metadata = {
 
 export default function Sobre() {
   return (
-    <div className="container mx-auto py-16 px-4 lg:px-8">
+    <div className="container mx-auto py-40 px-4 lg:px-8">
       <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
         Sobre Nós
       </h2>
-      <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+      <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
         A Meditação Moderna é dedicada a ajudar indivíduos a encontrar paz
         interior por meio de técnicas contemporâneas de meditação.
       </p>

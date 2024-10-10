@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function Contato() {
   return (
-    <div className="container mx-auto py-16 px-4 lg:px-8">
+    <div className="container mx-auto py-40 px-4 lg:px-8 ">
       <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
         Contato
       </h2>
