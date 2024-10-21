@@ -1,6 +1,4 @@
-import Card from '../components/Card';
-import Image from 'next/image';
-import { FaBrain, FaHeart, FaLeaf } from 'react-icons/fa';
+
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import Modal from '@/components/Modal';
 import Footer from '@/components/Footer';

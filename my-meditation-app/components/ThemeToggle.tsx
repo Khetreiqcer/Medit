@@ -6,7 +6,7 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
-    // Carregar o tema salvo do localStorage
+    // Carregar o tema 
     const storedTheme = localStorage.getItem('theme') as
       | 'light'
       | 'dark'

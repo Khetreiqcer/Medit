@@ -40,7 +40,7 @@ export default function Timer() {
       <button
         onClick={() => setIsActive(!isActive)}
         className="mt-4 bg-black text-white px-6 py-2 font-semibold hover:bg-gray-800"
-        aria-label="Iniciar/Pausar" // Descrição mais completa
+        aria-label="Iniciar/Pausar" 
       >
         {isActive ? 'Pausar' : 'Iniciar'}
       </button>
