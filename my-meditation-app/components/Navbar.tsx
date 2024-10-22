@@ -2,13 +2,15 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import ThemeToggle from './ThemeToggle';
+import AuthContext from '../context/AuthContext';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logout } = useContext(AuthContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,12 +115,29 @@ export default function Navbar() {
           >
             Contato
           </Link>
-          <Link
-            href="/login"
-            className="text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200"
-          >
-            Login
-          </Link>
+          {user ? (
+            <>
+              <Link
+                href="/profile"
+                className="text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200"
+              >
+                {user.email}
+              </Link>
+              <button
+                onClick={logout}
+                className="text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200"
+              >
+                Sair
+              </button>
+            </>
+          ) : (
+            <Link
+              href="/login"
+              className="text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200"
+            >
+              Login
+            </Link>
+          )}
           <ThemeToggle />
         </div>
       </div>

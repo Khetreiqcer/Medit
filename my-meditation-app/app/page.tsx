@@ -9,7 +9,6 @@ import Features from '@/components/Features';
 export default function Home() {
   return (
     <div>
-      {/* Seção Hero Melhorada */}
       <Hero />
       <BenefitSection />
       <section className="container mx-auto px-4 py-16 text-center">
