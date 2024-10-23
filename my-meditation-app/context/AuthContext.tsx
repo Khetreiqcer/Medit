@@ -1,3 +1,4 @@
+'use client'
 import { createContext, useState, useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/router';
 
@@ -9,7 +10,7 @@ interface AuthContextProps {
 
 interface User {
   email: string;
-  // Outros campos que você possa ter
+  
 }
 
 const AuthContext = createContext<AuthContextProps>({

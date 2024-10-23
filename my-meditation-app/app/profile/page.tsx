@@ -19,7 +19,8 @@ const Profile: React.FC = () => {
   if (!user) return null; // Ou mostrar um componente de carregamento
 
   return (
-    <ProtectedRoute>
+    // eslint-disable-next-line react/no-children-prop
+    <ProtectedRoute children={undefined}>
 
     </ProtectedRoute>
   );

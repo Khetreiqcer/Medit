@@ -26,7 +26,6 @@ export default function LoginPage() {
       });
 
       if (response.ok) {
-        // Redirecionar para a página de perfil após login
         window.location.href = '/profile';
       } else {
         const errorData = await response.json();

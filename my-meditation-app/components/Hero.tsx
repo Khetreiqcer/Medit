@@ -21,7 +21,7 @@ export default function Hero() {
         viewBox="0 0 200 200"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 3, ease: 'easeInOut' }}
+        transition={{ duration: 2, ease: 'easeInOut' }}
       >
         <motion.path
           d="M 100, 10 A 90, 90 0 1, 1 99.9, 10"
@@ -31,7 +31,7 @@ export default function Hero() {
           strokeLinecap="round"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: 3, ease: 'easeInOut' }}
+          transition={{ duration: 2, ease: 'easeInOut' }}
         />
         <motion.circle
           cx="130"
@@ -41,7 +41,7 @@ export default function Hero() {
           className="dark:fill-[#5E81AC]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 3.5, duration: 1 }}
+          transition={{ delay: 3, duration: 1 }}
         />
         <motion.circle
           cx="70"
@@ -51,14 +51,14 @@ export default function Hero() {
           className="dark:fill-[#FFFFFF]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 3.5, duration: 1 }}
+          transition={{ delay: 3, duration: 1 }}
         />
       </motion.svg>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 3.2, duration: 1 }}
+        transition={{ delay: 3, duration: 1 }}
         className="text-center"
       >
         <h1 className="text-5xl font-bold text-gray-900 dark:text-white leading-tight">
@@ -71,7 +71,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 4.5, duration: 1 }}
+        transition={{ delay: 4, duration: 1 }}
         className="text-center"
       >
         <Link href="/meditar">
