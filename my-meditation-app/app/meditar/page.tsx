@@ -44,7 +44,7 @@ export default function MeditationsPage() {
         setFilteredMeditations(data); // Inicialmente, exibe todas as meditações
         setLoading(false);
       } catch (err) {
-        setError(err.message);
+        
         setLoading(false);
       }
     };

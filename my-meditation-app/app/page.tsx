@@ -24,7 +24,7 @@ export default function Home() {
         <>
           <section className="container mx-auto px-4 py-16">
             <h2 className="text-3xl font-semibold text-center mb-12">
-              Bem-vindo de volta, {user.email}!
+              Bem-vindo de volta!
             </h2>
             <p className="text-center">
               Aqui estão suas recomendações personalizadas e atividades

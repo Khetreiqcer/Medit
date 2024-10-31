@@ -3,6 +3,7 @@
 import Slider from 'react-slick';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from 'react';
 
 export default function TestimonialCarousel() {
   const settings = {
@@ -13,12 +14,12 @@ export default function TestimonialCarousel() {
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    appendDots: (dots) => (
+    appendDots: (dots: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined) => (
       <div>
         <ul style={{ margin: '0px' }}> {dots} </ul>
       </div>
     ),
-    customPaging: (i) => (
+    customPaging: (i: any) => (
       <div
         style={{
           width: '12px',
@@ -72,7 +73,7 @@ export default function TestimonialCarousel() {
               className="mx-auto rounded-full mb-4 border-4 border-gray-300 dark:border-gray-600"
             />
             <p className="text-gray-600 dark:text-gray-400 italic mb-4">
-              "{testimonial.text}"
+              {testimonial.text}
             </p>
             <p className="text-lg text-primary dark:text-secondary font-bold">
               {testimonial.name}
