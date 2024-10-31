@@ -13,8 +13,8 @@ interface Meditation {
   titulo: string;
   descricao: string;
   categoria: string;
-  duracao: number; // Duração em segundos
-  imagem: string; // URL da imagem
+  duracao: number; 
+  imagem: string; 
   arquivoAudio: string;
 }
 
@@ -99,7 +99,7 @@ export default function MeditationsPage() {
     audio.currentTime += 5; // Avança 5 segundos
   };
 
-  // Função para salvar o progresso da meditação (apenas exemplo)
+  // Função para salvar o progresso da meditação 
   const handleSaveProgress = () => {
     if (selectedMeditation) {
       localStorage.setItem(
@@ -174,7 +174,7 @@ export default function MeditationsPage() {
             {selectedMeditation.titulo}
           </h2>
 
-          {/* Imagem da Meditação */}
+          
           <Image
             src={selectedMeditation.imagem}
             alt={selectedMeditation.titulo}
@@ -202,7 +202,7 @@ export default function MeditationsPage() {
               <FaBackward />
             </button>
 
-            {/* Botão Reproduzir/Pausar */}
+          
             <button
               onClick={handlePlayPause}
               className="bg-primary text-white px-6 py-2 font-semibold rounded-full hover:bg-primary-dark transition-transform transform hover:scale-105"
@@ -211,7 +211,6 @@ export default function MeditationsPage() {
               {isPlaying ? 'Pausar' : 'Reproduzir'}
             </button>
 
-            {/* Botão Avançar */}
             <button
               onClick={handleSeekForward}
               className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors duration-200"
@@ -220,8 +219,6 @@ export default function MeditationsPage() {
               <FaForward />
             </button>
           </div>
-
-          {/* Barra de Progresso */}
           <div className="flex items-center justify-center mb-4">
             <div className="mx-4 w-64 bg-gray-200 rounded-full h-2">
               <div
@@ -233,7 +230,7 @@ export default function MeditationsPage() {
             </div>
           </div>
 
-          {/* Tempo Decorrido / Tempo Total */}
+         
           <div className="flex items-center justify-center mb-4">
             <span className="text-gray-700 dark:text-gray-300">
               {formatTime(currentTime)} /{' '}
@@ -241,7 +238,7 @@ export default function MeditationsPage() {
             </span>
           </div>
 
-          {/* Controle de Volume */}
+         
           <div className="flex items-center justify-center">
             <span className="text-gray-700 dark:text-gray-300 mr-2">
               {volume > 0 ? <FaVolumeUp /> : <FaVolumeMute />}
@@ -257,7 +254,7 @@ export default function MeditationsPage() {
             />
           </div>
 
-          {/* Botão Salvar Progresso */}
+         
           <div className="flex items-center justify-center mt-8">
             <button
               onClick={handleSaveProgress}

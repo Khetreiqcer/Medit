@@ -11,12 +11,11 @@ const Profile: React.FC = () => {
 
   useEffect(() => {
     if (!user) {
-      // Se o usuário não estiver logado, redirecionar para o login
       router.push('/login');
     }
   }, [user, router]);
 
-  if (!user) return null; // Ou mostrar um componente de carregamento
+  if (!user) return null; 
 
   return (
     // eslint-disable-next-line react/no-children-prop

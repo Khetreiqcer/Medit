@@ -13,12 +13,11 @@ export default function LoginPage() {
     setError(''); // Limpa erros anteriores
 
     try {
-      // Validação básica (você pode adicionar mais regras)
+      // Validação básica 
       if (!email || !password) {
         throw new Error('Preencha todos os campos!');
       }
 
-      // TODO: Lógica de autenticação aqui (ex: enviar para API)
       const response = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

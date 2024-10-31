@@ -34,7 +34,7 @@ npm run start
 
 - Website: https://site2-0-three.vercel.app/
 - Github: [@Khetreiqcer](https://github.com/Khetreiqcer)
-- LinkedIn: [@João Possenti](https://linkedin.com/in/João Possenti)
+- LinkedIn: [@João Possenti](www.linkedin.com/in/joão-possenti-4434bb1a1)
 
 ## Show your support
 

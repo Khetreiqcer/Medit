@@ -28,13 +28,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-    // Verificar se o usuário está logado ao carregar o aplicativo
-    // Por exemplo, verificar um cookie ou localStorage
+    
   }, []);
 
   const login = (userData: User) => {
     setUser(userData);
-    // Salvar dados no cookie ou localStorage
   };
 
   const logout = () => {
